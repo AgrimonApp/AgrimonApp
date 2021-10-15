@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -172,7 +173,7 @@ public class RegistroFragment extends Fragment {
     }
 
     public void add_registro(){
-        db.collection("registros").whereEqualTo("user",user.getUid()).orderBy("fecha").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("registros").whereEqualTo("user",user.getUid()).orderBy("fecha", Query.Direction.DESCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
