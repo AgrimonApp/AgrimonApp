@@ -1,0 +1,84 @@
+<resources>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">Agrimón App</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+
+    //Main Activity
+    <string name="img_logo">Logo de Agrimon App</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="img_logo_google">Logo de Google</string>
+
+    //Fragmento - Inicio
+    <string name="btn_perfil">Imagen de perfil</string>
+    <string name="tv_bienvenida">Bienvenido(a),</string>
+    <string name="tv_displayName_user">DiplayName</string>
+    <string name="tv_ultimo_registro">Tu último registo</string>
+    <string name="tv_sin_registro">No hay ningún registro por mostrar</string>
+    <string name="tv_precios_limon">Precios del limón Tahití en Santander</string>
+    <string name="img_centro_abastos">Imagen centro abastos</string>
+    <string name="tv_title_centro_abastos">Centro abastos</string>
+    <string name="tv_precio_centro_abastos">XXXX COP</string>
+    <string name="img_mercados_centro">Imagen mercados del centro</string>
+    <string name="tv_title_mercado_centro">Mercados centro</string>
+    <string name="tv_precio_mercado_centro">XXXX COP</string>
+    <string name="img_san_gil">Imagen San Gil</string>
+    <string name="tv_title_san_gil">San Gil</string>
+    <string name="tv_precio_san_gil">XXXX COP</string>
+    <string name="img_socorro">Imagen Socorro</string>
+    <string name="tv_title_socorro">Socorro</string>
+    <string name="tv_precio_socorro">XXXX COP</string>
+    <string name="tv_sin_internet">*Dado que no tienes internet, se han colocado los datos de la última vez que tuviste conexión</string>
+
+    //Perfil
+    <string name="img_perfil">Foto de perfil</string>
+    <string name="btnCerrarSesion">Cerrar sesión</string>
+    <string name="tvOtrosUsuarios">¿Deseas contactar a alguien?</string>
+    <string name="tv_email_user">diplayemail@gmail.com</string>
+    <string name="btn_ver_contactos">Ver usuarios</string>
+
+    //Lista de contactos
+    <string name="btn_contacto">Contactar</string>
+    <string name="img_logo_gmail">Logo de Gmail</string>
+    <string name="tv_correo_users">Correo de la persona que desea contactar</string>
+    <string name="tv_asunto_users">Asunto</string>
+    <string name="tv_pre_asunto_users">Mensaje de Agrimón - Alguien quiere comunicarse contigo</string>
+    <string name="tv_cuerpo_users">Cuerpo del correo (Mensaje)</string>
+    <string name="tv_pre_cuerpo_users">Mensaje de Agrimón - Alguien quiere comunicarse contigo</string>
+    <string name="btn_enviar_correo">Enviar correo electrónico</string>
+    <string name="tv_sin_internet_correo">No tienes internet, cuando tengas conexión inténta nuevamente.</string>
+    <string name="img_sin_internet">Logo sin internet</string>
+
+    //Gráficos
+    <string name="tv_san_gil">San Gil</string>
+    <string name="tv_socorro">Socorro</string>
+    <string name="tv_centro_abastos">Centro abastos</string>
+    <string name="tv_mercados_centro">Mercados del centro</string>
+    <string name="btn_opcion_1">3 meses</string>
+    <string name="btn_opcion_2">6 meses</string>
+    <string name="btn_opcion_3">1 año</string>
+
+    //Registro
+    <string name="btn_ir_google_sheet">Abrir y actualizar hoja de cálculo</string>
+    <string name="tv_info_fecha">Fecha</string>
+    <string name="tv_fecha">22/09/2021</string>
+    <string name="tv_info_cantidad">Cantidad</string>
+    <string name="tv_cantidad">5</string>
+    <string name="tv_info_estimado_centro">Estimado Centro Abastos</string>
+    <string name="tv_estimado_centro">1500</string>
+    <string name="tv_info_estimado_mercados">Estimado Mercado del Centro</string>
+    <string name="tv_estimado_mercados">1200</string>
+    <string name="tv_info_estimado_san_gil">Estimado San Gil</string>
+    <string name="tv_estimado_san_gil">1350</string>
+    <string name="tv_info_estimado_socorro">Estimado Socorro</string>
+    <string name="tv_estimado_socorro">1180</string>
+
+    //Escanear
+    <string name="tv_escanear_automatico">Tomar fotografía</string>
+    <string name="tv_escanear_manual">Ingresar datos manuales</string>
+    <string name="tv_pregunta_1">¿Cuántos bultos de limón Tahití tienes?</string>
+    <string name="tv_pregunta_2">¿Cuánto pesan los bultos en promedio?</string>
+    <string name="btn_calcular">Calcular estimado</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
