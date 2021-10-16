@@ -71,7 +71,7 @@
                 android:layout_marginRight="40dp"
                 android:text="@string/tv_sin_registro"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_precios_limon"

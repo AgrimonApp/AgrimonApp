@@ -31,6 +31,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -148,37 +149,9 @@ public class EscanerFragment extends Fragment {
             }
         });
 
-
-        /*
-
-                Map<String, Object> data = new HashMap<>();
-                data.put("cantidad", 5);
-                data.put("estimado_centro_abastos", 1200);
-                data.put("estimado_marcados_centro", 1500);
-                data.put("estimado_san_gil", 1800);
-                data.put("estimado_socorro", 1400);
-                data.put("fecha",new Date());
-                data.put("user",user.getUid());
-
-                db.collection("registros")
-                        .add(data)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(getContext(), "Guarda con el id " + documentReference.getId(), Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getContext(), "Error " + e, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-         */
-
         return view;
     }
+
 
     int paso = 0;
     public void recibir_datos(String nombre, int total){
@@ -187,14 +160,19 @@ public class EscanerFragment extends Fragment {
             paso++;
         }else{
             data.put(nombre,total);
-            Toast.makeText(getContext(), data.toString(), Toast.LENGTH_SHORT).show();
             db.collection("registros")
                     .add(data)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             pb_estimado.setVisibility(View.GONE);
-                            Toast.makeText(getContext(), "Guardado con el id " + documentReference.getId(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getContext(),ResultadoActivity.class);
+                            intent.putExtra("cantidad",et_bultos.getText().toString());
+                            intent.putExtra("estimado_centro",data.get("estimado_centro_abastos")+"");
+                            intent.putExtra("estimado_mercado",data.get("estimado_marcados_centro")+"");
+                            intent.putExtra("estimado_socorro",data.get("estimado_socorro")+"");
+                            intent.putExtra("estimado_san_gil",data.get("estimado_san_gil")+"");
+                            startActivity(intent);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

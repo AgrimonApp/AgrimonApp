@@ -79,6 +79,21 @@
     <string name="tv_mensaje">Ya se calculó </string>
     <string name="btn_calcular">Calcular estimado</string>
 
+    //Resultado
+    <string name="tv_imagen">Imagen subida</string>
+    <string name="tv_bultos">La cantidad de bultos fue:</string>
+    <string name="tv_cantidad_bultos">40</string>
+    <string name="tv_texto">Según la base de datos del DANE, la cantidad de 40 bultos, se puede vender en: </string>
+    <string name="tv_estimado_centro_result">Centro Abastos: xxxx COP</string>
+    <string name="tv_estimado_mercado_result">Mercados del Centro: xxxx COP</string>
+    <string name="tv_estimado_socorro_result">Socorro: xxxx COP</string>
+    <string name="tv_estimado_san_gil_result">San Gil: xxxx COP</string>
+    <string name="img_subida">Imagen cargada por el usuario</string>
+    <string name="btn_volver">Volver al menú</string>
+
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

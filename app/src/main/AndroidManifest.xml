@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.ObjectDetection">
         <activity
+            android:name=".ResultadoActivity"
+            android:exported="true" />
+        <activity
             android:name=".CorreosActivity"
             android:exported="true" />
         <activity
