@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AdaptadorRegistros extends RecyclerView.Adapter<AdaptadorRegistros.MyViewHolder>{
@@ -37,12 +38,14 @@ public class AdaptadorRegistros extends RecyclerView.Adapter<AdaptadorRegistros.
 
         DateFormat formateadorFechaMedia = DateFormat.getDateInstance(DateFormat.MEDIUM);
 
+        DecimalFormat decimalFormat = new DecimalFormat("#,###,###");
+
         holder.tv_fecha.setText(formateadorFechaMedia.format(registro.fecha));
         holder.tv_cantidad.setText(registro.cantidad + "");
-        holder.tv_estimado_centro.setText(registro.estimado_centro_abastos + "");
-        holder.tv_estimado_mercados.setText(registro.estimado_marcados_centro + "");
-        holder.tv_estimado_san_gil.setText(registro.estimado_san_gil + "");
-        holder.tv_estimado_socorro.setText(registro.estimado_socorro + "");
+        holder.tv_estimado_centro.setText("$ " + decimalFormat.format(registro.estimado_centro_abastos)+ " COP");
+        holder.tv_estimado_mercados.setText("$ " + decimalFormat.format(registro.estimado_marcados_centro)+ " COP");
+        holder.tv_estimado_san_gil.setText("$ " + decimalFormat.format(registro.estimado_san_gil)+ " COP");
+        holder.tv_estimado_socorro.setText("$ " + decimalFormat.format(registro.estimado_socorro)+ " COP");
     }
 
     @Override

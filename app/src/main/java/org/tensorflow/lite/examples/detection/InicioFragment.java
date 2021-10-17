@@ -23,6 +23,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.Date;
 
 /**
@@ -78,6 +79,7 @@ public class InicioFragment extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     DateFormat formateadorFechaMedia = DateFormat.getDateInstance(DateFormat.MEDIUM);
+    DecimalFormat decimalFormat = new DecimalFormat("#,###,###");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -126,7 +128,7 @@ public class InicioFragment extends Fragment {
                     for(QueryDocumentSnapshot document : task.getResult()){
                         Timestamp date = (Timestamp) document.getData().get("Date");
                         pb_socorro.setVisibility(View.GONE);
-                        tv_precio_socorro.setText(document.getData().get("PROM_DIARIO").toString() + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
+                        tv_precio_socorro.setText("$ " + decimalFormat.format(Integer.parseInt(document.getData().get("PROM_DIARIO").toString())) + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
                         tv_precio_socorro.setVisibility(View.VISIBLE);
                     }
                 }
@@ -142,7 +144,7 @@ public class InicioFragment extends Fragment {
                     for(QueryDocumentSnapshot document : task.getResult()){
                         Timestamp date = (Timestamp) document.getData().get("Date");
                         pb_san_gil.setVisibility(View.GONE);
-                        tv_precio_san_gil.setText(document.getData().get("PROM_DIARIO").toString() + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
+                        tv_precio_san_gil.setText("$ " + decimalFormat.format(Integer.parseInt(document.getData().get("PROM_DIARIO").toString())) + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
                         tv_precio_san_gil.setVisibility(View.VISIBLE);
                     }
                 }
@@ -158,7 +160,7 @@ public class InicioFragment extends Fragment {
                     for(QueryDocumentSnapshot document : task.getResult()){
                         Timestamp date = (Timestamp) document.getData().get("Date");
                         pb_centro_abastos.setVisibility(View.GONE);
-                        tv_precio_centro_abastos.setText(document.getData().get("PROM_DIARIO").toString() + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
+                        tv_precio_centro_abastos.setText("$ " + decimalFormat.format(Integer.parseInt(document.getData().get("PROM_DIARIO").toString())) + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
                         tv_precio_centro_abastos.setVisibility(View.VISIBLE);
                     }
                 }
@@ -174,7 +176,7 @@ public class InicioFragment extends Fragment {
                     for(QueryDocumentSnapshot document : task.getResult()){
                         Timestamp date = (Timestamp) document.getData().get("Date");
                         pb_mercados_centro.setVisibility(View.GONE);
-                        tv_precio_mercado_centro.setText(document.getData().get("PROM_DIARIO").toString() + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
+                        tv_precio_mercado_centro.setText("$ " + decimalFormat.format(Integer.parseInt(document.getData().get("PROM_DIARIO").toString())) + " COP (" + formateadorFechaMedia.format(date.toDate()) + ")");
                         tv_precio_mercado_centro.setVisibility(View.VISIBLE);
                     }
                 }
@@ -197,7 +199,7 @@ public class InicioFragment extends Fragment {
                             Long estimado_san_gil = (Long) document.getData().get("estimado_san_gil");
                             Long estimado_socorro = (Long) document.getData().get("estimado_socorro");
                             Long prom = (estimado_centro_abastos + estimado_marcados_centro + estimado_san_gil + estimado_socorro)/4;
-                            tv_sin_registro.setText("Tu último registro fue el " + formateadorFechaMedia.format(fecha.toDate()) + ", se detectó una cantidad de " + document.getData().get("cantidad") + " bultos. Y el promedio calculado fue de: " + prom);
+                            tv_sin_registro.setText("Fue el " + formateadorFechaMedia.format(fecha.toDate()) + ", se detectó una cantidad de " + document.getData().get("cantidad") + " bultos. Y el promedio calculado fue de: $ " + decimalFormat.format(prom) + " COP");
                         }
                     }
                 }else{

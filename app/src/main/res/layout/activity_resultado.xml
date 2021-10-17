@@ -32,9 +32,18 @@
                 android:id="@+id/img_subida"
                 android:layout_width="280dp"
                 android:layout_height="267dp"
-                android:layout_marginBottom="20dp"
                 android:contentDescription="@string/img_subida"
                 app:srcCompat="@drawable/logo_app" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/secundario" />
 
             <TextView
                 android:id="@+id/tv_bultos"
@@ -49,11 +58,20 @@
                 android:id="@+id/tv_cantidad_bultos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="@string/tv_cantidad_bultos"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/secundario" />
 
             <TextView
                 android:id="@+id/tv_texto"

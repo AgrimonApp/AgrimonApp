@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 
 public class ResultadoActivity extends AppCompatActivity {
 
-    TextView tv_cantidad_bultos,tv_estimado_centro_result,tv_estimado_mercado_result,tv_estimado_socorro_result,tv_estimado_san_gil_result;
+    TextView tv_cantidad_bultos,tv_estimado_centro_result,tv_estimado_mercado_result,tv_estimado_socorro_result,tv_estimado_san_gil_result,tv_texto;
     Button btn_volver;
 
     @Override
@@ -25,9 +25,12 @@ public class ResultadoActivity extends AppCompatActivity {
         tv_estimado_mercado_result = findViewById(R.id.tv_estimado_mercado_result);
         tv_estimado_socorro_result = findViewById(R.id.tv_estimado_socorro_result);
         tv_estimado_san_gil_result = findViewById(R.id.tv_estimado_san_gil_result);
+        tv_texto = findViewById(R.id.tv_texto);
 
         String cantidad = getIntent().getStringExtra("cantidad");
         tv_cantidad_bultos.setText(cantidad);
+
+        tv_texto.setText("Según la base de datos del DANE, la cantidad de " + cantidad + " bultos, se pueden vender en:");
 
         DecimalFormat decimalFormat = new DecimalFormat("#,###,###");
 
@@ -44,7 +47,7 @@ public class ResultadoActivity extends AppCompatActivity {
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ResultadoActivity.this,InicioActivity.class));
+                onBackPressed();
                 finish();
             }
         });
