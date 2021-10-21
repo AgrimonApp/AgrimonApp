@@ -151,7 +151,11 @@ public class RegistroFragment extends Fragment {
                                             @Override
                                             public void onErrorResponse(VolleyError error) {
                                                 // TODO: Handle error
-                                                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getContext(), "¡Ya casi se actualizan los datos! Abriendo hoja de cálculo...", Toast.LENGTH_LONG).show();
+                                                pb_registros.setVisibility(View.GONE);
+                                                Uri uri = Uri.parse("https://docs.google.com/spreadsheets/d/"+document.getData().get("google_sheet_id")+"/");
+                                                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                                                startActivity(intent);
                                             }
                                         });
 

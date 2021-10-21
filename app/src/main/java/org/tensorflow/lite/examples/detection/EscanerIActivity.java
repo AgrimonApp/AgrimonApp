@@ -68,7 +68,6 @@ public class EscanerIActivity extends AppCompatActivity {
 
     }
 
-
     private static final Logger LOGGER = new Logger();
 
     public static final int TF_OD_API_INPUT_SIZE = 416;
@@ -143,6 +142,7 @@ public class EscanerIActivity extends AppCompatActivity {
 
         for (final Classifier.Recognition result : results) {
             final RectF location = result.getLocation();
+            Toast.makeText(EscanerIActivity.this, result.getTitle(), Toast.LENGTH_SHORT).show();
             if (location != null && result.getConfidence() >= MINIMUM_CONFIDENCE_TF_OD_API) {
                 canvas.drawRect(location, paint);
 //                cropToFrameTransform.mapRect(location);
